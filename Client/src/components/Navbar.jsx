@@ -19,7 +19,7 @@ const Navbar = () => {
                 </a>
 
                 <a 
-                    href="https://dochub.com/koushiksai574/mqNjP3BVW187dM7R9yGzLk/cit-saikoushik-cse-pdf"
+                    href="https://ik.imagekit.io/nknso76xld/Resume/CIT_Sai_Koushik_CSE.pdf?updatedAt=1725794088693"
                     target="_blank" 
                     rel="noopener noreferrer"
                     className="px-4 py-1 bg-red-500 text-white rounded hover:bg-blue-700 transition-colors duration-300"

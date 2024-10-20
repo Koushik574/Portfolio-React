@@ -12,7 +12,7 @@ export const EXPERIENCES = [
     company: "Revamp Academy",
     description: `I joined Reavmp Academy as a Full Stack Developer intern for one month, where I deepened my understanding of web development concepts and built a video calling website.`,
     technologies: ["Javascript", "React.js", "Node.js", "PostgreSQL"],
-    certificate:"https://dochub.com/koushiksai574/B5LgrGvR0aejOzaK9MYq6j/revampintern-fullstackdevelopers-pdf",
+    certificate:"https://ik.imagekit.io/nknso76xld/Resume/RevampIntern-FullStackDevelopers.pdf?updatedAt=1729442504012",
   },
 ];
 
