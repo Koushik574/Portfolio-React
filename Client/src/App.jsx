@@ -6,6 +6,7 @@ import Navbar from "./components/Navbar";
 import Projects from "./components/Projects";
 import Technologies from "./components/Technologies";
 import Footer from "./components/Footer";
+import ChatBot from "./components/ChatBot";
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Experience/>
         <Projects/>
         <Contact/>
+        <ChatBot/>
         <Footer />
       </div>
     </div>

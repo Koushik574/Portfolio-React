@@ -1,0 +1,8 @@
+GitHub Name: Sai Koushik
+Bio: MERN Full Stack Web Developer | Python | Java | JavaScript
+Featured Projects:
+- Portfolio Website (React, Vite, Tailwind, Framer Motion)
+- VidWave (React,Node,ExpressJS, WebSocket,Socket-io,Material UI)
+- ShopNest(React, Node, ExpressJS, NeonDB, PostgreSQL, Prisma, ContextAPI, Zod Validation)
+- Project Auth(JWT, Nodemailer, Mongoose, MongoDB, MongoDB Atlas, React, Node, ExpressJS)
+- O Auth(O Auth, SSO, Node, ExpressJS, Session, Cookies)

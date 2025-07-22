@@ -1,0 +1,23 @@
+Name: Sai Koushik
+Headline: Ex - PAT Intern @ Cognizant | Full Stack Web Developer
+
+---
+About:
+I'm a passionate full stack developer with experience in building modern web applications using MERN stack. I enjoy solving problems and building clean, scalable products.
+
+---
+Education:
+- B.E in Computer Science and Engineering from Chennai Institute of Technology, CGPA: 8.3/ 10
+- 12th Grade from Everwin Matric. Hr. Sec. School, Percentage: 88%
+- 10th Grade from Everwin Matric. Hr. Sec. School, Percentage: 83%
+
+---
+Experience:
+- Intern at Cognizant (PAT Intern) – 3 Months, got trained and worked on SAP BW, SAP HANA, SAP ABAP
+
+---
+Skills:
+- Frontend: React, Vite, Tailwind CSS, Framer Motion
+- Backend: Node.js, Express.js, MongoDB, PostgreSQL
+- Programming: Python, Java, JavaScript
+- Tools: Git, GitHub, Postman, Vercel, MongoDB Atlas

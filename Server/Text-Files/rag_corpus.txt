@@ -1,0 +1,57 @@
+GitHub Name: Sai Koushik
+Bio: MERN Full Stack Web Developer | Python | Java | JavaScript
+Featured Projects:
+- Portfolio Website (React, Vite, Tailwind, Framer Motion)
+- VidWave (React,Node,ExpressJS, WebSocket,Socket-io,Material UI)
+- ShopNest(React, Node, ExpressJS, NeonDB, PostgreSQL, Prisma, ContextAPI, Zod Validation)
+- Project Auth(JWT, Nodemailer, Mongoose, MongoDB, MongoDB Atlas, React, Node, ExpressJS)
+- O Auth(O Auth, SSO, Node, ExpressJS, Session, Cookies)
+
+---
+
+Name: Sai Koushik
+Headline: Ex - PAT Intern @ Cognizant | Full Stack Web Developer
+
+---
+About:
+I'm a passionate full stack developer with experience in building modern web applications using MERN stack. I enjoy solving problems and building clean, scalable products.
+
+---
+Education:
+- B.E in Computer Science and Engineering from Chennai Institute of Technology, CGPA: 8.3/ 10
+- 12th Grade from Everwin Matric. Hr. Sec. School, Percentage: 88%
+- 10th Grade from Everwin Matric. Hr. Sec. School, Percentage: 83%
+
+---
+Experience:
+- Intern at Cognizant (PAT Intern) – 3 Months, got trained and worked on SAP BW, SAP HANA, SAP ABAP
+
+---
+Skills:
+- Frontend: React, Vite, Tailwind CSS, Framer Motion
+- Backend: Node.js, Express.js, MongoDB, PostgreSQL
+- Programming: Python, Java, JavaScript
+- Tools: Git, GitHub, Postman, Vercel, MongoDB Atlas
+
+---
+
+---
+Certifications:
+- NASSCOM: Introduction to Cyber Security
+- CISCO: Introduction to Cyber Security
+- UDEMY: The Complete 2023 Web Development Bootcamp
+- COURSERA: Crash Course on Python by Google
+
+---
+Competitive Coding:
+- Solved 300+ challenging problems on SkillRack, improving algorithmic thinking, and coding efficiency significantly.
+- Aced 150+ LeetCode problems across various difficulty levels, consistently showcasing strong problem-solving abilities.
+- Attained a 1-star rating in CodeChef Division 4 with a competitive rating of 1135 points overall recently achieved.
+- Div-2 in CodeForces with a competitive contest rating of 898 points achieved through consistent practice and dedication.
+
+---
+Achievements:
+- Conducted and Mentored a Non-Technical Event with my team called "Geekwars- A quiz game related to tech in Kahoot platform" at my college for our department symposium.
+
+---
+
