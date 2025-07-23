@@ -2,8 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 # from Chatbot import ask_chatbot
-# from Scripts.Chatbot import ask_chatbot
-from Server.Scripts.Chatbot import ask_chatbot
+from Scripts.Chatbot import ask_chatbot
 
 
 app = FastAPI()
@@ -30,8 +29,7 @@ def chat_with_bot(user_input: QueryInput):
 
 if __name__ == "__main__":
     import uvicorn
-uvicorn.run("app:app",
+    uvicorn.run("Scripts.app:app",
                 host="0.0.0.0",
-                port=8000,
-                reload=True)
+                port=8000)
 
