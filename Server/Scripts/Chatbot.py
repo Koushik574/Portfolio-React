@@ -1,68 +1,61 @@
-import pickle
 import os
-from openai import OpenAI
 from dotenv import load_dotenv
 from sentence_transformers import SentenceTransformer
-from sklearn.neighbors import NearestNeighbors
-import numpy as np
+from pinecone import Pinecone
+from groq import Groq
 
-# Load env vars
+# ✅ Load environment variables from .env
 load_dotenv()
 
-client = OpenAI(
-    api_key=os.getenv("GROQ_API_KEY"),
-    base_url="https://api.groq.com/openai/v1"
-)
-
-# Load vectorstore
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-with open(os.path.join(BASE_DIR, "..", "vectorstore.pkl"), "rb") as f:
-    vectorstore = pickle.load(f)
-
-chunks = vectorstore["chunks"]
-embeddings = np.array(vectorstore["embeddings"])
-
-# Optimize: Use NearestNeighbors for low memory search
-nn = NearestNeighbors(n_neighbors=1, metric="cosine")
-nn.fit(embeddings)
-
+# 🔗 Load embedding model
+print("🔗 Loading embedding model...")
 model = SentenceTransformer("all-MiniLM-L6-v2")
 
-def get_top_chunk(query: str) -> str:
-    query_vec = model.encode([query])
-    _, indices = nn.kneighbors(query_vec)
-    top_idx = indices[0][0]
-    return chunks[top_idx]
+# 🌲 Connect to Pinecone
+print("🌲 Connecting to Pinecone...")
+pc = Pinecone(api_key=os.environ["PINECONE_API_KEY"])
+index = pc.Index("sai-rag-chatbot-index")
 
-def ask_chatbot(query: str) -> str:
-    context = get_top_chunk(query)
-    prompt = f"""You are a helpful AI assistant that answers questions
-about a developer named Sai Koushik using the following context.
+# 🤖 Initialize Groq API
+groq = Groq(api_key=os.environ["GROQ_API_KEY"])
 
-Context:
-{context}
+# 🧠 Query loop
+while True:
+    query = input("\n🧠 Ask me anything (type 'exit' to quit):\n> ")
+    if query.lower() == "exit":
+        break
 
-Question:
-{query}
+    # 1️⃣ Embed the user query
+    embedded_query = model.encode(query).tolist()
 
-Answer:"""
+    # 2️⃣ Query Pinecone index
+    results = index.query(vector=embedded_query, top_k=3, include_metadata=True)
 
-    response = client.chat.completions.create(
-        model="llama3-8b-8192",
-        messages=[{"role": "user", "content": prompt}],
-        temperature=0.5
-    )
+    # 3️⃣ Extract context
+    context = ""
+    for match in results["matches"]:
+        metadata = match.get("metadata", {})
+        content = metadata.get("text") or metadata.get("content") or ""
+        context += content.strip() + "\n---\n"
 
-    return response.choices[0].message.content.strip()
+    print("\n📚 Retrieved Context:\n", context.strip())
 
-if __name__ == "__main__":
-    print("🤖 Ask me anything about Sai Koushik!")
-    while True:
-        try:
-            user_input = input("Please ask me a qn sir/mam: ")
-            if user_input.lower() in ["exit", "quit"]:
-                break
-            answer = ask_chatbot(user_input)
-            print("My answer to your qn is:", answer)
-        except KeyboardInterrupt:
-            break
+    if not context.strip():
+        print("\n🤖 Answer:\n Sorry, I couldn't find anything relevant in the context.\n")
+        continue
+
+    # 4️⃣ Send to LLM via Groq
+    try:
+        response = groq.chat.completions.create(
+            model="llama3-8b-8192",  # ✅ Updated supported model
+            messages=[
+                {"role": "system", "content": "Answer the question using the given context below. If the answer isn't found in the context, say so."},
+                {"role": "user", "content": f"Context:\n{context}\n\nQuestion:\n{query}"}
+            ]
+        )
+        answer = response.choices[0].message.content.strip()
+        print("\n🤖 Answer:\n", answer, "\n")
+
+    except Exception as e:
+        print("\n❌ Groq API error:", str(e))
+        print("\n🤖 Answer:\n Sorry, something went wrong while querying the LLM.\n")

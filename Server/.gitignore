@@ -1,1 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pkl
+*.log
+
+# Virtual environment
+venv/
+env/
+.venv/
+
+# IDE / Editor folders
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+
+# Environment
 .env
+
+# Pytest cache
+.pytest_cache/
+
+# MyPy / Type checkers
+.mypy_cache/
+
+# Others
+*.db
+*.sqlite3
+*.egg-info/
+
+# Jupyter (if used)
+.ipynb_checkpoints/
+
+# Token / credential artifacts (if any)
+*.pem
+*.key

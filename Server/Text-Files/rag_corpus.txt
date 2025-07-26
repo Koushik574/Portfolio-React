@@ -1,3 +1,21 @@
+---
+Certifications:
+- NASSCOM: Introduction to Cyber Security
+- CISCO: Introduction to Cyber Security
+- UDEMY: The Complete 2023 Web Development Bootcamp
+- COURSERA: Crash Course on Python by Google
+
+---
+Competitive Coding:
+- Solved 300+ challenging problems on SkillRack, improving algorithmic thinking, and coding efficiency significantly.
+- Aced 150+ LeetCode problems across various difficulty levels, consistently showcasing strong problem-solving abilities.
+- Attained a 1-star rating in CodeChef Division 4 with a competitive rating of 1135 points overall recently achieved.
+- Div-2 in CodeForces with a competitive contest rating of 898 points achieved through consistent practice and dedication.
+
+---
+Achievements:
+- Conducted and Mentored a Non-Technical Event with my team called "Geekwars- A quiz game related to tech in Kahoot platform" at my college for our department symposium.
+
 GitHub Name: Sai Koushik
 Bio: MERN Full Stack Web Developer | Python | Java | JavaScript
 Featured Projects:
@@ -6,8 +24,6 @@ Featured Projects:
 - ShopNest(React, Node, ExpressJS, NeonDB, PostgreSQL, Prisma, ContextAPI, Zod Validation)
 - Project Auth(JWT, Nodemailer, Mongoose, MongoDB, MongoDB Atlas, React, Node, ExpressJS)
 - O Auth(O Auth, SSO, Node, ExpressJS, Session, Cookies)
-
----
 
 Name: Sai Koushik
 Headline: Ex - PAT Intern @ Cognizant | Full Stack Web Developer
@@ -32,26 +48,4 @@ Skills:
 - Backend: Node.js, Express.js, MongoDB, PostgreSQL
 - Programming: Python, Java, JavaScript
 - Tools: Git, GitHub, Postman, Vercel, MongoDB Atlas
-
----
-
----
-Certifications:
-- NASSCOM: Introduction to Cyber Security
-- CISCO: Introduction to Cyber Security
-- UDEMY: The Complete 2023 Web Development Bootcamp
-- COURSERA: Crash Course on Python by Google
-
----
-Competitive Coding:
-- Solved 300+ challenging problems on SkillRack, improving algorithmic thinking, and coding efficiency significantly.
-- Aced 150+ LeetCode problems across various difficulty levels, consistently showcasing strong problem-solving abilities.
-- Attained a 1-star rating in CodeChef Division 4 with a competitive rating of 1135 points overall recently achieved.
-- Div-2 in CodeForces with a competitive contest rating of 898 points achieved through consistent practice and dedication.
-
----
-Achievements:
-- Conducted and Mentored a Non-Technical Event with my team called "Geekwars- A quiz game related to tech in Kahoot platform" at my college for our department symposium.
-
----
 
