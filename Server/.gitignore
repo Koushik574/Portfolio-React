@@ -38,3 +38,6 @@ env/
 # Token / credential artifacts (if any)
 *.pem
 *.key
+
+# Dev-only CLI script
+Server/Scripts/Chatbot.py

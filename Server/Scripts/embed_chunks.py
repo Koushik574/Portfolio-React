@@ -1,29 +1,42 @@
-from sentence_transformers import SentenceTransformer
+from google.generativeai import configure, embed_content
 from pinecone import Pinecone, ServerlessSpec
-import os
 from uuid import uuid4
+import os
+from dotenv import load_dotenv
 
-# === CONFIGURATION ===
+# === Load .env variables ===
+load_dotenv()
+
+GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
 PINECONE_API_KEY = os.getenv("PINECONE_API_KEY")
-INDEX_NAME = "sai-rag-chatbot-index"
-TXT_FILE_PATH = "Text-Files/rag_corpus.txt"
+INDEX_NAME = "koushik-rag-chatbot-index"
+TXT_FILE_PATH = "../Text-Files/rag_corpus.txt"
 
-# === STEP 1: Load the corpus ===
+# === Configure Gemini ===
+configure(api_key=GOOGLE_API_KEY)
+
+# === Step 1: Load corpus ===
 with open(TXT_FILE_PATH, "r", encoding="utf-8") as file:
     text = file.read()
 
-# === STEP 2: Chunk the text (simple line-based chunking for demo) ===
+# === Step 2: Chunk the text ===
 chunks = [chunk.strip() for chunk in text.split("\n\n") if chunk.strip()]
 
-# === STEP 3: Generate embeddings ===
-model = SentenceTransformer("all-MiniLM-L6-v2")
-embeddings = model.encode(chunks).tolist()  # Convert numpy arrays to lists for JSON serialization
+# === Step 3: Embed chunks with Gemini ===
+def embed_with_gemini(text):
+    response = embed_content(
+        model="models/text-embedding-004",
+        content=text,
+        task_type="retrieval_document"
+    )
+    return response["embedding"]
 
-# === STEP 4: Initialize Pinecone and connect to index ===
+embeddings = [embed_with_gemini(chunk) for chunk in chunks]
+
+# === Step 4: Upload to Pinecone ===
 pc = Pinecone(api_key=PINECONE_API_KEY)
 index = pc.Index(INDEX_NAME)
 
-# === STEP 5: Upload to Pinecone ===
 vectors = [
     {
         "id": str(uuid4()),
