@@ -8,7 +8,7 @@ const ChatBot = () => {
   const handleAsk = async () => {
     setLoading(true)
     try {
-      const res = await fetch("https://portfolio-react-with-rag-chatbot.onrender.com", {
+      const res = await fetch("https://portfolio-react-with-rag-chatbot.onrender.com/chat", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
